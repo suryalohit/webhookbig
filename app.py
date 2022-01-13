@@ -7,7 +7,7 @@ import json
 import math
 from flask import Flask, request
 import pandas as pd
-from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
+from binance import Client
 api_key="cLn6BbpRC8wpE6NIq0Z7ebLkpZez0o8I1X5dEG7EjMvULZPoAlyTc8EmQpaSzv17"
 api_secret="i3hUtLdolcx5289Atv9oCTWI4ayntw84p8oWOuXDcnXiq9BPklPW9AOjEYqVjVeT"
 client = Client(api_key, api_secret)
@@ -18,7 +18,7 @@ def create_app(test_config=None ):
     app = Flask(__name__)
 
     # Simple route
-    @app.route('/')
+    @app.route('/', methods=['POST','GET'])
     def hello_world(): 
         return jsonify({
            "status": "success",
