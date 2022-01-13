@@ -2,7 +2,7 @@ from flask import (
     Flask, 
     jsonify
 )
-
+import requests
 import json
 import math
 from flask import Flask, request
@@ -21,7 +21,17 @@ app = Flask(__name__)
 @app.route('/')
 def index(): 
         return "<h1>Welcome to Geeks for Geeks</h1>"
-     
+
+
+@app.route('/telweb', methods=['GET','POST'])
+def telweb(): 
+         
+         send_text = 'https://api.telegram.org/bot5064252177:AAGlwwtDi4B7TiwB4LTDyPvtYNeGIKJDlHk/sendMessage?chat_id=998041732&parse_mode=Markdown&text=hiihowareu?'
+
+         response = requests.get(send_text)
+
+         return response.json()
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
 
