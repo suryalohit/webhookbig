@@ -26,7 +26,7 @@ def index():
 @app.route('/telweb', methods=['GET','POST'])
 def telweb(): 
          
-         send_text = 'https://api.telegram.org/bot5064252177:AAGlwwtDi4B7TiwB4LTDyPvtYNeGIKJDlHk/sendMessage?chat_id=998041732&parse_mode=Markdown&text=NewChangeMadeNow?'
+         send_text = 'https://api.telegram.org/bot5064252177:AAGlwwtDi4B7TiwB4LTDyPvtYNeGIKJDlHk/sendMessage?chat_id=998041732&parse_mode=Markdown&text=newtestmessage?'
 
          response = requests.get(send_text)
 
