@@ -23,7 +23,7 @@ app = Flask(__name__)
     # Simple route
 @app.route('/')
 def index(): 
-        return "<h1>Welcome to Geeks for Geeks,new</h1>"
+        return "<h1>test1</h1>"
 
 
 @app.route('/telweb', methods=['GET','POST'])
@@ -196,7 +196,7 @@ def webhook():
 
          if side=="LONG":
             try:
-                ap=client.futures_create_order(symbol='SANDUSDT', side='BUY',positionSide="BOTH",type='MARKET',quantity=14,reduceOnly='false')
+                ap=client.futures_create_order(symbol='SANDUSDT', side='BUY',positionSide="BOTH",type='MARKET',quantity=115,reduceOnly='false')
                 print(ap)
                 result = client.futures_get_order(symbol='SANDUSDT',orderId=ap['orderId'])
                 
@@ -216,7 +216,7 @@ def webhook():
                 
          if side=="SHORT":
             try:
-                ap=client.futures_create_order(symbol='SANDUSDT', side='SELL',positionSide="BOTH",type='MARKET',quantity=14,reduceOnly='false')
+                ap=client.futures_create_order(symbol='SANDUSDT', side='SELL',positionSide="BOTH",type='MARKET',quantity=115,reduceOnly='false')
                 print(ap)
                 result = client.futures_get_order(symbol='SANDUSDT',orderId=ap['orderId'])
                 pr=float(pr)
