@@ -20,13 +20,13 @@ app = Flask(__name__)
     # Simple route
 @app.route('/')
 def index(): 
-        return "<h1>new web</h1>"
+        return "<h1>new web ok</h1>"
 
 
 @app.route('/telweb', methods=['GET','POST'])
 def telweb(): 
          
-         send_text = 'https://api.telegram.org/bot5064252177:AAGlwwtDi4B7TiwB4LTDyPvtYNeGIKJDlHk/sendMessage?chat_id=998041732&parse_mode=Markdown&text=pre?'
+         send_text = 'https://api.telegram.org/bot5064252177:AAGlwwtDi4B7TiwB4LTDyPvtYNeGIKJDlHk/sendMessage?chat_id=998041732&parse_mode=Markdown&text=prepeka?'
 
          response = requests.get(send_text)
 
