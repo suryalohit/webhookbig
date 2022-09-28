@@ -20,7 +20,7 @@ app = Flask(__name__)
     # Simple route
 @app.route('/')
 def index(): 
-        return "<h1>Welcome to Geeks for Geeks</h1>"
+        return "<h1>new web</h1>"
 
 
 @app.route('/telweb', methods=['GET','POST'])
