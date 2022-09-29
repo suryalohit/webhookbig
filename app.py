@@ -14,6 +14,10 @@ api_secret="i3hUtLdolcx5289Atv9oCTWI4ayntw84p8oWOuXDcnXiq9BPklPW9AOjEYqVjVeT"
 client = Client(api_key, api_secret)
 global overall
 overall=0
+global overall1
+overall1=0
+global overall2
+overall2=0
 
 # Function that create the app 
 
