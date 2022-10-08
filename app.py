@@ -379,7 +379,7 @@ def tl():
          if side=="LONG":
             try:
                 pr=float(pr)
-                ap=client.futures_create_order(symbol=pair, side='BUY',positionSide="BOTH",type='LIMIT',quantity=qt,reduceOnly='false',price=pr)
+                ap=client.futures_create_order(symbol=pair, side='BUY',type='LIMIT',quantity=qt,reduceOnly='false',price=pr)
                 print(ap)
                 result = client.futures_get_order(symbol=pair,orderId=ap['orderId'])
                 
