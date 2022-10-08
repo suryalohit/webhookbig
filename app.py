@@ -27,7 +27,7 @@ app = Flask(__name__)
     # Simple route
 @app.route('/')
 def index(): 
-        return "<h1>test5</h1>"
+        return "<h1>test6</h1>"
 
 
 @app.route('/telweb', methods=['GET','POST'])
@@ -378,11 +378,12 @@ def tl():
 
          if side=="LONG":
             try:
-                ap=client.futures_create_order(symbol=pair, side='BUY',positionSide="BOTH",type='MARKET',quantity=qt,reduceOnly='false')
+                pr=float(pr)
+                ap=client.futures_create_order(symbol=pair, side='BUY',positionSide="BOTH",type='LIMIT',quantity=qt,reduceOnly='false',price=pr)
                 print(ap)
                 result = client.futures_get_order(symbol=pair,orderId=ap['orderId'])
                 
-                pr=float(pr)
+               
                 avgp=float(result['avgPrice'])
                 print(pr)
                 print(avgp)
@@ -398,10 +399,11 @@ def tl():
                 
          if side=="SHORT":
             try:
-                ap=client.futures_create_order(symbol=pair, side='SELL',positionSide="BOTH",type='MARKET',quantity=qt,reduceOnly='false')
+                pr=float(pr)
+                ap=client.futures_create_order(symbol=pair, side='SELL',positionSide="BOTH",type='MARKET',quantity=qt,reduceOnly='false',price=pr)
                 print(ap)
                 result = client.futures_get_order(symbol=pair,orderId=ap['orderId'])
-                pr=float(pr)
+                
                 avgp=float(result['avgPrice'])
                 print(pr)
                 print(avgp)
